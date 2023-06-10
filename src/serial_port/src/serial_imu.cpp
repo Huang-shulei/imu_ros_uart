@@ -56,6 +56,7 @@ void callback(const ros::TimerEvent& event)
 					if(rev)
 					{
 						imu_data.header.stamp = ros::Time::now();
+						publish_imu_data(&raw, &imu_data);
 						IMU_pub.publish(imu_data);
 					}
 				}
